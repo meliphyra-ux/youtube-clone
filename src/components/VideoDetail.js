@@ -6,4 +6,4 @@ const VideoDetail = () => {
   )
 }
 
-export default Video
+export default VideoDetail
