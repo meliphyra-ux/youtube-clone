@@ -9,11 +9,11 @@ import PodcastsIcon from '@mui/icons-material/Podcasts';
 
 
 export const categories= [
-    {name: "Sports", icon: <SportsBasketballIcon fontSize='large' display="flex" alignItems="center"/>},
-    {name: "Music", icon: <MusicNoteIcon fontSize='large' display="flex" alignItems="center"/>},
-    {name: "Esports", icon: <SportsEsportsIcon fontSize='large' display="flex" alignItems="center"/>},
-    {name: "Education", icon: <SchoolIcon fontSize='large' display="flex" alignItems="center"/>},
-    {name: "Code", icon: <CodeIcon fontSize='large' display="flex" alignItems="center"/>},
-    {name: "Movies", icon: <LocalMoviesIcon fontSize='large' display="flex" alignItems="center"/>},
-    {name: "Podcasts", icon: <PodcastsIcon fontSize='large' display="flex" alignItems="center"/>},
+    {name: "Sports", icon: <SportsBasketballIcon fontSize='large'/>},
+    {name: "Music", icon: <MusicNoteIcon fontSize='large'/>},
+    {name: "Esports", icon: <SportsEsportsIcon fontSize='large'/>},
+    {name: "Education", icon: <SchoolIcon fontSize='large'/>},
+    {name: "Code", icon: <CodeIcon fontSize='large'/>},
+    {name: "Movies", icon: <LocalMoviesIcon fontSize='large'/>},
+    {name: "Podcasts", icon: <PodcastsIcon fontSize='large'/>},
 ]

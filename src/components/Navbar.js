@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import { categories } from '../assets/utilities/categories'
 
-const Navbar = () => {
+const Navbar = ({category, setCategory}) => {
   return (
     <Box sx={{
       position: "fixed",
@@ -15,13 +15,17 @@ const Navbar = () => {
     }}>
       <Stack spacing={2} direction="column">
           {categories.map(category =>(
-            <Box display="flex" alignItems="center" sx={{
-              margin: "15px 0 !important"
+            <Box key={category.name} display="flex" alignItems="center" sx={{
+              margin: "15px 0 !important",
+              cursor: "pointer"
+            }} onClick={()=>{
+              setCategory(category.name.toLowerCase())
             }}>
               {category.icon}
               <Typography variant="p" sx={{
                 fontSize: "20px",
-                paddingLeft: "15px"
+                paddingLeft: "15px",
+                backgroundColor: category.name === category ? "green" : false
               }}>
                 {category.name}
               </Typography>

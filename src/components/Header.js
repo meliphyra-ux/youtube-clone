@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AppBar, Button, Box, OutlinedInput } from "@mui/material";
 
 import SearchIcon from '@mui/icons-material/Search';
