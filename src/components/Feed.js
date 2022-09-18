@@ -1,8 +1,14 @@
 import React from 'react'
+import { Box } from '@mui/material'
+import Navbar from './Navbar'
 
-const Feed = () => {
+const Feed = ({isNavbarOpen}) => {
   return (
-    <div>Feed</div>
+    <Box display="flex" sx={{
+      height: "100vh"
+    }}>
+      {isNavbarOpen && <Navbar />}
+    </Box>
   )
 }
 

@@ -3,13 +3,17 @@ import { BrowserRouter,Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material'
 
 import { Feed, ChannelDetail, Header, SearchFeed, VideoDetail} from './components'
+import { useState } from 'react';
 
-const App = () => (
-  <BrowserRouter>
-    <Box sx={{backgroundColor: '#000'}}>
-      <Header />
+const App = () => {
+  const [isNavbarOpen, setIsNavbarOpen] = useState(true);
+
+  return (
+    <BrowserRouter>
+    <Box sx={{backgroundColor: 'rgba(33, 33, 33, 0.98)'}}>
+      <Header isNavbarOpen={isNavbarOpen} setIsNavbarOpen={setIsNavbarOpen}/>
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={<Feed isNavbarOpen={isNavbarOpen}/>} />
         <Route path="/video/:id" element={<VideoDetail />}/>
         <Route path="/channel/:id" element={<ChannelDetail />}/>
         <Route path="/search/:searchTerm" element={<SearchFeed />}/>
@@ -17,6 +21,7 @@ const App = () => (
     </Box>
   </BrowserRouter>
   )
+}
     
   
 
