@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { AppBar, Button, Box, OutlinedInput } from "@mui/material";
 
+import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from "@mui/icons-material/Menu";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-import Navbar from "./Navbar";
-
-const Header = () => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState(true);
-
+const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
   return (
     <AppBar
       className="flex"
       sx={{
         backgroundColor: "hsl(0, 0%, 18.82%)",
-        flexDirection: "row"
+        flexDirection: "row",
+        position: "fixed",
       }}
     >
       <Box display="flex" alignItems="center">
@@ -41,12 +39,16 @@ const Header = () => {
         </h1>
       </Box>
       <Box display="flex" alignItems="center">
-            <OutlinedInput sx={{
-                color: "#ffffff",
-                border: "2px solid hsla(0, 0%, 53.3%, 0.4)"
-            }} placeholder="Enter a request..."/>
+        <OutlinedInput
+          sx={{
+            color: "#ffffff",
+            borderRadius: "0",
+            border: "2px solid hsla(0, 0%, 53.3%, 0.4)",
+          }}
+          placeholder="Enter a request..."
+        />
+        <Button><SearchIcon/></Button>
       </Box>
-      {isNavbarOpen && <Navbar />}
     </AppBar>
   );
 };
