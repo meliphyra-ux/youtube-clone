@@ -8,10 +8,9 @@ const Feed = ({ isNavbarOpen }) => {
   const [category, setCategory] = useState("sports");
 
   useEffect(() => {
-    fetchAPIData(`search?q=${category}&part=snippet%2Cid&maxResults=50`)
+    fetchAPIData(`search?q=${category}&part=snippet%2Cid&maxResults=48`)
       .then((data) => {
-        setVideos(data.items);
-        console.log(videos)
+        setVideos(data.items);  
       })
       .catch((e) => {
         console.log(e);
@@ -21,10 +20,20 @@ const Feed = ({ isNavbarOpen }) => {
     <Box
       display="flex"
       sx={{
+        flexDirection: "column",
         minHeight: "100vh",
       }}
     >
       {isNavbarOpen && <Navbar category={category} setCategory={setCategory} />}
+      <Typography variant="h2" 
+      sx={{
+        position: "relative",
+        top: "60px",
+        left: "375px",
+        color: "#fff",
+        fontWeight: "bold"
+      }}
+      >{category[0].toUpperCase() + category.slice(1,60)}</Typography>
       <Box sx={{
         position: "relative",
         left: "303px",
@@ -38,15 +47,15 @@ const Feed = ({ isNavbarOpen }) => {
       }}>
         {videos && videos != null && videos.map(video => (
             <Card sx={{
-                margin: "10px 0",
-                width: "300px",
-                height: "250px"
+                margin: "20px 15px",
+                width: "250px",
+                height: "200px"
 
               }}
               key={video.id.videoId}
               >
               <CardMedia component="img"
-              height="150"
+              height="125"
               image={video.snippet.thumbnails.high.url}
               />
               <CardContent>
