@@ -47,6 +47,7 @@ const Videos = ({ category }) => {
               key={video.id.videoId}
               id={video.id.videoId}
               title={video.snippet.title.slice(0, 60)}
+              channelTitle={video.snippet.channelTitle}
               image={video.snippet.thumbnails.high.url}
             />
           ))}
