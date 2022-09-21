@@ -10,7 +10,7 @@ const Navbar = ({category, setCategory}) => {
       width: "20%",
       top: "60px",
       left: "0px",
-      height: "100vh",
+      height: "calc(100vh - 60px)",
       backgroundColor: "hsl(0, 0%, 18.82%)",
       padding: "20px 150px 10px 15px",
       color: "#fff"
