@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import fetchAPIData from "../assets/utilities/api";
 import VideoCard from "./VideoCard";
+import ChannelCard from "./ChannelCard";
+import { Link } from "react-router-dom";
 
 const Videos = ({ category }) => {
   const [videos, setVideos] = useState(null);
@@ -15,7 +17,10 @@ const Videos = ({ category }) => {
       });
   }, [category]);
   return (
-    <Box>
+    <Box sx={{
+      height: "calc(100vh)",
+      overflow: "scroll"
+    }}>
       <Typography
         variant="h2"
         sx={{
@@ -43,13 +48,21 @@ const Videos = ({ category }) => {
         {videos &&
           videos != null &&
           videos.map((video) => (
-            <VideoCard
+            <>
+            {video.id.kind === "youtube#video" ? 
+            <Link to={`/video/${video.id.videoId}`}><VideoCard
               key={video.id.videoId}
               id={video.id.videoId}
               title={video.snippet.title.slice(0, 60)}
               channelTitle={video.snippet.channelTitle}
               image={video.snippet.thumbnails.high.url}
             />
+            </Link> :
+            <Link to={`/channel/${video.id.channelId}`}>
+              <ChannelCard channelDetail={video} />
+            </Link>
+            }
+            </>
           ))}
       </Box>
     </Box>

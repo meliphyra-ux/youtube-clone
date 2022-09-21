@@ -1,10 +1,8 @@
 import { Card, Typography, CardMedia, CardContent } from "@mui/material";
-import { Link } from "react-router-dom";
 import React from "react";
 
 const VideoCard = ({ title, image, id, channelTitle }) => {
   return (
-    <Link to={`/video/${id}`}>
       <Card
         sx={{
           margin: "20px 15px",
@@ -23,7 +21,6 @@ const VideoCard = ({ title, image, id, channelTitle }) => {
           <Typography variant="subtitle1">{channelTitle}</Typography>
         </CardContent>
       </Card>
-    </Link>
   );
 };
 
