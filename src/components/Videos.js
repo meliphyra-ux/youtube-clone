@@ -19,7 +19,7 @@ const Videos = ({ category }) => {
   return (
     <Box sx={{
       height: "calc(100vh)",
-      overflow: "scroll"
+      overflow: "scroll",
     }}>
       <Typography
         variant="h2"

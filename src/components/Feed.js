@@ -11,6 +11,7 @@ const Feed = ({ isNavbarOpen }) => {
       sx={{
         flexDirection: "row",
         minHeight: "100vh",
+        backgroundColor: 'rgba(33, 33, 33, 0.98)'
       }}
     >
       {isNavbarOpen && <Navbar category={category} setCategory={setCategory} />}

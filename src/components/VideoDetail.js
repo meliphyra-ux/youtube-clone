@@ -15,20 +15,27 @@ const VideoDetail = () => {
   }, [id])
   
   return (
+  <Box sx={{
+    backgroundColor: 'rgba(33, 33, 33, 0.98)',
+    width: "100vw",
+    minHeight: "calc(100vh + 75px)"
+  }}>
     <Box sx={{
       position: "relative",
       top: "60px",
-      minHeight: "100vh",
+      minHeight: "calc(100vh - 120px)",
       margin: "30px",
-      color: "#fff"
+      color: "#fff",
+      width: "65vw",
     }}>
       <ReactPlayer className="player" height="500px" width="825px" url={`https://www.youtube.com/watch?v=${id}`}/>
+      {videoData !== null && <>
       <Typography variant="h3">{videoData.snippet.title}</Typography>
-      <Typography variant="subtitle1">{videoData.snippet.channelTitle}</Typography>
-      <Typography variant="subtitle2" sx={{
-        width: "65vw"
-      }}>{videoData.snippet.description}</Typography>
+      <Typography variant="subtitle1" >{videoData.snippet.channelTitle}</Typography>
+      <Typography variant="subtitle2" >{videoData.snippet.description}</Typography>
+      </>}
     </Box>
+  </Box>
   )
 }
 

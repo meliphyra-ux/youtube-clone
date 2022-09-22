@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <Box sx={{backgroundColor: 'rgba(33, 33, 33, 0.98)'}}>
+    <Box>
       <Header isNavbarOpen={isNavbarOpen} setIsNavbarOpen={setIsNavbarOpen}/>
       <Routes>
         <Route path="/" element={<Feed isNavbarOpen={isNavbarOpen}/>} />
