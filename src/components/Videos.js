@@ -53,7 +53,7 @@ const Videos = ({ category }) => {
             <Link to={`/video/${video.id.videoId}`}><VideoCard
               key={video.id.videoId}
               id={video.id.videoId}
-              title={video.snippet.title.slice(0, 60)}
+              title={video.snippet.title.slice(0, 55)}
               channelTitle={video.snippet.channelTitle}
               image={video.snippet.thumbnails.high.url}
             />

@@ -6,4 +6,11 @@
 }
 a{
   text-decoration: none;
+  color: #fff;
+}
+iframe{ 
+  min-width: 350px !important;
+  min-height: 250px !important;
+  height: 60vh !important;
+  width: 65vw !important;
 }
