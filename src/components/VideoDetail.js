@@ -6,11 +6,18 @@ import fetchAPIData from '../assets/utilities/api'
 
 const VideoDetail = () => {
   let { id } = useParams()
-  const [videoData, setVideoData] = useState(null)
+  const [videoData, setVideoData] = useState(null);
+  const [relatedVideos, setRelatedVideos] = useState(null)
   useEffect(() => {
     fetchAPIData(`videos?part=contentDetails%2Csnippet%2Cstatistics&id=${id}`)
     .then(data => {
       setVideoData(data.items[0])
+    })
+
+    fetchAPIData(`search?relatedToVideoId=${id}&part=id%2Csnippet&type=video&maxResults=49`)
+    .then(data => {
+      setRelatedVideos(data.items)
+      console.log(data.items)
     })
   }, [id])
   
@@ -34,6 +41,9 @@ const VideoDetail = () => {
       <Typography variant="subtitle1" >{videoData.snippet.channelTitle}</Typography>
       <Typography variant="subtitle2" >{videoData.snippet.description}</Typography>
       </>}
+    </Box>
+    <Box>
+
     </Box>
   </Box>
   )
