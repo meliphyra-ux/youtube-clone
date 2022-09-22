@@ -4,6 +4,7 @@ import { AppBar, Button, Box, OutlinedInput } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from "@mui/icons-material/Menu";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Link } from "react-router-dom";
 
 const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
   return (
@@ -28,6 +29,7 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
             }}
           />
         </Button>
+        <Link to="/">
         <h1 className="flex flex-center">
           <YouTubeIcon
             fontSize="large"
@@ -37,6 +39,7 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
           />
           YouTube
         </h1>
+        </Link>
       </Box>
       <Box display="flex" alignItems="center">
         <OutlinedInput
