@@ -3,6 +3,8 @@ import ReactPlayer from 'react-player/youtube'
 import { useParams } from 'react-router-dom'
 import { Box, Typography } from "@mui/material"
 import fetchAPIData from '../assets/utilities/api'
+import { Link } from 'react-router-dom'
+import VideoCard from './VideoCard'
 
 const VideoDetail = () => {
   let { id } = useParams()
@@ -25,11 +27,13 @@ const VideoDetail = () => {
   <Box sx={{
     backgroundColor: 'rgba(33, 33, 33, 0.98)',
     width: "100vw",
-    minHeight: "calc(100vh + 75px)"
+    minHeight: "calc(100vh + 75px)",
+    display: "flex",
+    justifyContent: "space-between",
+    position: "relative",
+    top: "60px",
   }}>
     <Box sx={{
-      position: "relative",
-      top: "60px",
       minHeight: "calc(100vh - 120px)",
       margin: "30px",
       color: "#fff",
@@ -43,7 +47,16 @@ const VideoDetail = () => {
       </>}
     </Box>
     <Box>
-
+        {relatedVideos && relatedVideos.map(relatedVideo =>
+        <Link to={`/video/${relatedVideo.id.videoId}`}>
+          <VideoCard
+              key={relatedVideo.id.videoId}
+              id={relatedVideo.id.videoId}
+              title={relatedVideo.snippet.title.slice(0, 55)}
+              channelTitle={relatedVideo.snippet.channelTitle}
+              image={relatedVideo.snippet.thumbnails.high.url}
+            />
+          </Link>)}
     </Box>
   </Box>
   )

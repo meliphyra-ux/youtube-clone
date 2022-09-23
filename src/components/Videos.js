@@ -46,7 +46,6 @@ const Videos = ({ category }) => {
         }}
       >
         {videos &&
-          videos != null &&
           videos.map((video) => (
             <>
             {video.id.kind === "youtube#video" ? 
