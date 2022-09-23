@@ -3,7 +3,7 @@ import React from 'react'
 
 const ChannelCard = ({channelDetail}) => {
   return (
-    <Card sx={{
+    <Card component="section" sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -18,8 +18,8 @@ const ChannelCard = ({channelDetail}) => {
             height: "150px",
             width: "150px"
         }}/>
-        <CardContent>
-            <Typography variant="subtitle1">{channelDetail.snippet.title}</Typography>
+        <CardContent component="article">
+            <Typography variant="subtitle1" component="h2">{channelDetail.snippet.title}</Typography>
         </CardContent>
     </Card>
   )

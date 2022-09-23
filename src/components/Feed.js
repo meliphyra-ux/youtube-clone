@@ -6,7 +6,8 @@ import Videos from "./Videos";
 const Feed = ({ isNavbarOpen }) => {
   const [category, setCategory] = useState("sports");
   return (
-    <Box
+    <Box 
+    component="main"
       display="flex"
       sx={{
         flexDirection: "row",

@@ -24,16 +24,21 @@ const VideoDetail = () => {
   }, [id])
   
   return (
-  <Box sx={{
+  <Box
+  component="main"
+  sx={{
     backgroundColor: 'rgba(33, 33, 33, 0.98)',
     width: "100vw",
+    padding: "0 20px",
     minHeight: "calc(100vh + 75px)",
     display: "flex",
     justifyContent: "space-between",
     position: "relative",
     top: "60px",
   }}>
-    <Box sx={{
+    <Box
+    component="section"
+    sx={{
       minHeight: "calc(100vh - 120px)",
       margin: "30px",
       color: "#fff",
@@ -46,7 +51,7 @@ const VideoDetail = () => {
       <Typography variant="subtitle2" >{videoData.snippet.description}</Typography>
       </>}
     </Box>
-    <Box>
+    <Box component="section">
         {relatedVideos && relatedVideos.map(relatedVideo =>
         <Link to={`/video/${relatedVideo.id.videoId}`}>
           <VideoCard

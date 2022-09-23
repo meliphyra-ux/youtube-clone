@@ -4,7 +4,9 @@ import { categories } from '../assets/utilities/categories'
 
 const Navbar = ({category, setCategory}) => {
   return (
-    <Box sx={{
+    <Box
+    component="nav"
+    sx={{
       display: "inline-block",
       position: "relative",
       width: "20%",

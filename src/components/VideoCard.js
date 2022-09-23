@@ -4,6 +4,7 @@ import React from "react";
 const VideoCard = ({ title, image, id, channelTitle }) => {
   return (
       <Card
+      component="section"
         sx={{
           margin: "20px 15px",
           width: "260px",
@@ -14,11 +15,13 @@ const VideoCard = ({ title, image, id, channelTitle }) => {
       >
         <CardMedia component="img" height="125" image={image} />
         <CardContent>
-          <Typography sx={{
+          <Typography
+          component="h2"
+          sx={{
           height: "50px"
         }}
            variant="subtitle2">{title}</Typography>
-          <Typography variant="subtitle1">{channelTitle}</Typography>
+          <Typography variant="subtitle1" component="article">{channelTitle}</Typography>
         </CardContent>
       </Card>
   );
