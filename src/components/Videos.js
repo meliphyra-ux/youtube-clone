@@ -20,6 +20,7 @@ const Videos = ({ category }) => {
     <Box sx={{
       height: "calc(100vh)",
       overflow: "scroll",
+      width:"100%"
     }}>
       <Typography
         variant="h2"
@@ -38,8 +39,7 @@ const Videos = ({ category }) => {
           position: "relative",
           top: "60px",
           display: "inline-flex",
-          width: "calc(100vw - 303px)",
-          zIndex: "0",
+          width: "100%",
           flexFlow: "row wrap",
           alignItems: "center",
           justifyContent: "space-around",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AppBar, Button, Box, OutlinedInput } from "@mui/material";
 
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,6 +7,9 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Link } from "react-router-dom";
 
 const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
+
+  const [searchValue, setSearchValue] = useState("")
+
   return (
     <AppBar
       className="flex"
@@ -49,8 +52,10 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
             border: "2px solid hsla(0, 0%, 53.3%, 0.4)",
           }}
           placeholder="Enter a request..."
+          value={searchValue}
+          onChange={e => setSearchValue(e.target.value)}
         />
-        <Button><SearchIcon/></Button>
+        <Link to={`/search/${searchValue}`}><Button onClick={() => null}><SearchIcon/></Button></Link>
       </Box>
     </AppBar>
   );

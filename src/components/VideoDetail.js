@@ -30,7 +30,7 @@ const VideoDetail = () => {
     backgroundColor: 'rgba(33, 33, 33, 0.98)',
     width: "100vw",
     padding: "0 20px",
-    minHeight: "calc(100vh + 75px)",
+    minHeight: "calc(100vh)",
     display: "flex",
     justifyContent: "space-between",
     position: "relative",
