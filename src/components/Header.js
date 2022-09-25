@@ -70,7 +70,10 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
             searchValue ? `/search/${searchValue}` : console.log("Write query")
           }
         >
-          <Button>
+          <Button sx={{
+            height: "60px",
+            borderRadius: "0"
+          }}>
             <SearchIcon />
           </Button>
         </Link>
