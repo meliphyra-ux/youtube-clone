@@ -42,12 +42,12 @@ const VideoDetail = () => {
       minHeight: "calc(100vh - 120px)",
       margin: "30px",
       color: "#fff",
-      width: "65vw",
+      width: "70vw",
     }}>
-      <ReactPlayer className="player" height="500px" width="825px" url={`https://www.youtube.com/watch?v=${id}`}/>
+      <ReactPlayer className="player" height="500px" width="75vw" url={`https://www.youtube.com/watch?v=${id}`}/>
       {videoData !== null && <>
       <Typography variant="h3">{videoData.snippet.title}</Typography>
-      <Typography variant="subtitle1" >{videoData.snippet.channelTitle}</Typography>
+      <Link to={`/channel/${videoData.snippet.channelId}`}><Typography variant="subtitle1" >{videoData.snippet.channelTitle}</Typography></Link>
       <Typography variant="subtitle2" >{videoData.snippet.description}</Typography>
       </>}
     </Box>
@@ -56,7 +56,7 @@ const VideoDetail = () => {
         <Link to={`/video/${relatedVideo.id.videoId}`}>
           <VideoCard
               key={relatedVideo.id.videoId}
-              id={relatedVideo.id.videoId}
+              channelId={relatedVideo.snippet.channelId}
               title={relatedVideo.snippet.title.slice(0, 55)}
               channelTitle={relatedVideo.snippet.channelTitle}
               image={relatedVideo.snippet.thumbnails.high.url}

@@ -17,11 +17,13 @@ const Videos = ({ category }) => {
       });
   }, [category]);
   return (
-    <Box sx={{
-      height: "calc(100vh)",
-      overflow: "scroll",
-      width:"100%"
-    }}>
+    <Box
+      sx={{
+        height: "calc(100vh)",
+        overflow: "scroll",
+        width: "100%",
+      }}
+    >
       <Typography
         variant="h2"
         sx={{
@@ -48,19 +50,24 @@ const Videos = ({ category }) => {
         {videos &&
           videos.map((video) => (
             <>
-            {video.id.kind === "youtube#video" ? 
-            <Link to={`/video/${video.id.videoId}`}><VideoCard
-              key={video.id.videoId}
-              id={video.id.videoId}
-              title={video.snippet.title.slice(0, 55)}
-              channelTitle={video.snippet.channelTitle}
-              image={video.snippet.thumbnails.high.url}
-            />
-            </Link> :
-            <Link to={`/channel/${video.id.channelId}`}>
-              <ChannelCard channelDetail={video} />
-            </Link>
-            }
+              {video.id.kind === "youtube#video" ? (
+                <Link to={`/video/${video.id.videoId}`}>
+                  <VideoCard
+                    key={video.id.videoId}
+                    channelId={video.snippet.channelId}
+                    title={video.snippet.title.slice(0, 55)}
+                    channelTitle={video.snippet.channelTitle}
+                    image={
+                      video.snippet.thumbnails.high?.url ||
+                      video.snippet.thumbnails.default.url
+                    }
+                  />
+                </Link>
+              ) : (
+                <Link to={`/channel/${video.id.channelId}`}>
+                  <ChannelCard channelDetail={video} />
+                </Link>
+              )}
             </>
           ))}
       </Box>
