@@ -26,19 +26,14 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
             setIsNavbarOpen(!isNavbarOpen);
           }}
         >
-          <MenuIcon
-            fontSize="large"
-            sx={{
-              color: "#ffffff",
-            }}
-          />
+          <MenuIcon fontSize="large" />
         </Button>
         <Link to="/">
           <h1 className="flex flex-center">
             <YouTubeIcon
               fontSize="large"
               sx={{
-                color: "#ff0000",
+                fill: "#ff0000",
               }}
             />
             YouTube
@@ -48,7 +43,6 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
       <Box display="flex" alignItems="center">
         <OutlinedInput
           sx={{
-            color: "#ffffff",
             borderRadius: "0",
             border: "2px solid hsla(0, 0%, 53.3%, 0.4)",
           }}
@@ -70,10 +64,12 @@ const Header = ({ isNavbarOpen, setIsNavbarOpen }) => {
             searchValue ? `/search/${searchValue}` : console.log("Write query")
           }
         >
-          <Button sx={{
-            height: "60px",
-            borderRadius: "0"
-          }}>
+          <Button
+            sx={{
+              height: "60px",
+              borderRadius: "0",
+            }}
+          >
             <SearchIcon />
           </Button>
         </Link>

@@ -7,14 +7,11 @@ const Navbar = ({ categoryName, setCategory }) => {
     <Box
       component="nav"
       sx={{
-        display: "inline-block",
         position: "relative",
         top: "60px",
-        left: "0px",
         height: "calc(100vh - 60px)",
         backgroundColor: "hsl(0, 0%, 18.82%)",
-        padding: "20px 150px 10px 15px",
-        color: "#fff",
+        padding: "20px 100px 10px 8px",
       }}
     >
       <Stack spacing={2} direction="column">
@@ -24,7 +21,6 @@ const Navbar = ({ categoryName, setCategory }) => {
             display="flex"
             sx={{
               justifyContent: "flex-start",
-              color: "#fff",
               margin: "15px 0 !important",
               cursor: "pointer",
             }}
@@ -34,9 +30,8 @@ const Navbar = ({ categoryName, setCategory }) => {
           >
             {category.icon}
             <Typography
-              variant="p"
+              variant="h6"
               sx={{
-                fontSize: "20px",
                 paddingLeft: "15px",
                 backgroundColor:
                   category.name === categoryName ? "green" : false,

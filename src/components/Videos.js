@@ -19,7 +19,7 @@ const Videos = ({ category }) => {
   return (
     <Box
       sx={{
-        height: "calc(100vh)",
+        height: "100vh",
         overflow: "scroll",
         width: "100%",
       }}
@@ -30,7 +30,6 @@ const Videos = ({ category }) => {
           position: "relative",
           top: "60px",
           margin: "10px 15px",
-          color: "#fff",
           fontWeight: "bold",
         }}
       >

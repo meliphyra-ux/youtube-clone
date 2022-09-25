@@ -1,14 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: #fff !important;
 }
-a{
-  text-decoration: none;
-  color: #fff;
+a {
+  text-decoration: none !important;
 }
-iframe{ 
+iframe {
   min-width: 350px !important;
   min-height: 250px !important;
   height: 62.5vh !important;

@@ -6,17 +6,15 @@ import Videos from "./Videos";
 const Feed = ({ isNavbarOpen }) => {
   const [category, setCategory] = useState("sports");
   return (
-    <Box 
-    component="main"
+    <Box
+      component="main"
       display="flex"
       sx={{
         flexDirection: "row",
-        minHeight: "100vh",
-        backgroundColor: 'rgba(33, 33, 33, 0.98)'
       }}
     >
       {isNavbarOpen && <Navbar category={category} setCategory={setCategory} />}
-      <Videos category={category}/>
+      <Videos category={category} />
     </Box>
   );
 };
