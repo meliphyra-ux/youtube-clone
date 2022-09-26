@@ -33,7 +33,7 @@ const Videos = ({ category }) => {
           fontWeight: "bold",
         }}
       >
-        {category[0].toUpperCase() + category.slice(1, 60)}
+        {category[0].toUpperCase() + category.slice(1, 60) + " videos"}
       </Typography>
       <Box
         sx={{
